@@ -10,10 +10,17 @@ class Cart:
         else:
             self.items[product_id] = quantity
 
-    def remove_item(self, item):
+    def remove_item(self, item, quantity):
         if item in self.items:
-            self.items.remove(item)
-            print(f"Removed {item} from the cart.")
+            if self.items[item]>=quantity:
+                self.items[item] -= quantity
+                print(f'Removed {quantity} of {item} from the cart.')
+            else:
+                print(f"Cannot remove {quantity} of {item}. Only {self.items[item]} in the cart.")
+                return
+            if quantity == 0:
+                self.items.remove(item)
+                print(f"Removed {item} from the cart.")
         else:
             print(f"{item} not found in the cart.")
 
