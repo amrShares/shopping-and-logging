@@ -1,0 +1,124 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Wireless Bluetooth Headphones",
+      "category": "Audio",
+      "price": 79.99
+    },
+    {
+      "id": 2,
+      "name": "Smartphone 128GB",
+      "category": "Mobile Devices",
+      "price": 499.99
+    },
+    {
+      "id": 3,
+      "name": "Laptop 15.6-inch",
+      "category": "Computers",
+      "price": 899.99
+    },
+    {
+      "id": 4,
+      "name": "4K LED Monitor 27-inch",
+      "category": "Displays",
+      "price": 329.99
+    },
+    {
+      "id": 5,
+      "name": "Mechanical Keyboard",
+      "category": "Accessories",
+      "price": 119.99
+    },
+    {
+      "id": 6,
+      "name": "Wireless Mouse",
+      "category": "Accessories",
+      "price": 39.99
+    },
+    {
+      "id": 7,
+      "name": "External SSD 1TB",
+      "category": "Storage",
+      "price": 149.99
+    },
+    {
+      "id": 8,
+      "name": "Portable Power Bank 20000mAh",
+      "category": "Power",
+      "price": 49.99
+    },
+    {
+      "id": 9,
+      "name": "Smartwatch Series X",
+      "category": "Wearables",
+      "price": 249.99
+    },
+    {
+      "id": 10,
+      "name": "Tablet 10-inch",
+      "category": "Mobile Devices",
+      "price": 299.99
+    },
+    {
+      "id": 11,
+      "name": "Wireless Earbuds",
+      "category": "Audio",
+      "price": 59.99
+    },
+    {
+      "id": 12,
+      "name": "Gaming Console",
+      "category": "Gaming",
+      "price": 499.99
+    },
+    {
+      "id": 13,
+      "name": "VR Headset",
+      "category": "Gaming",
+      "price": 349.99
+    },
+    {
+      "id": 14,
+      "name": "Smart Home Speaker",
+      "category": "Smart Home",
+      "price": 89.99
+    },
+    {
+      "id": 15,
+      "name": "Wi-Fi Router AX3000",
+      "category": "Networking",
+      "price": 129.99
+    },
+    {
+      "id": 16,
+      "name": "Action Camera 4K",
+      "category": "Cameras",
+      "price": 199.99
+    },
+    {
+      "id": 17,
+      "name": "Drone with HD Camera",
+      "category": "Cameras",
+      "price": 399.99
+    },
+    {
+      "id": 18,
+      "name": "Portable Bluetooth Speaker",
+      "category": "Audio",
+      "price": 69.99
+    },
+    {
+      "id": 19,
+      "name": "Graphics Tablet",
+      "category": "Peripherals",
+      "price": 179.99
+    },
+    {
+      "id": 20,
+      "name": "USB-C Docking Station",
+      "category": "Accessories",
+      "price": 139.99
+    }
+  ]
+}
