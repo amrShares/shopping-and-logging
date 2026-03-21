@@ -1,0 +1,17 @@
+class User:
+    def __init__(self, name, email):
+        self.name = name
+        self.email = email
+        self.orders = []
+        self.balance = 0
+
+    def __str__(self):
+        return f"User(name={self.name}, email={self.email})"
+
+    def update_email(self, new_email):
+        self.email = new_email
+
+    def update_balance(self, new_balance):
+        if new_balance < 0:
+            raise ValueError("Balance cannot be negative.")
+        self.balance = new_balance
