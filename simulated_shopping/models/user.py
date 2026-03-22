@@ -15,3 +15,6 @@ class User:
         if new_balance < 0:
             raise ValueError("Balance cannot be negative.")
         self.balance = new_balance
+
+    def as_dict(self):
+        return {'name' : self.name, 'email':self.email, 'balance':self.balance, 'orders':self.orders}

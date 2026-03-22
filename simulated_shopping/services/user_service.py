@@ -18,11 +18,35 @@ class UserService:
             logger.exception(f"users file {self._users_path} not found. Starting with empty user base.")
             self.__users = {}
 
-    def view_users(self):
-        return self.__users
-
     def get_user_data(self, user_id):
-        return self.__users.get(user_id, False)
+        return self.__users.get(str(user_id), False)
 
     def view_user_data(self, user_id):
-        print(User(**self.__users[user_id]))
+        user_data = self.__users.get(str(user_id))
+
+        if not user_data:
+            logger.warning(f"User {user_id} not found")
+            return
+
+        print(User(**user_data))
+
+    def add_user(self, user_data : User):
+        if not isinstance(user_data, User):
+            print('please provide a valid User')
+            return False
+        self.__users[str(len(self.__users)+1)] = user_data.as_dict()
+        self.save_user_data()
+
+    def save_user_data(self):
+        try:
+            with open(self._users_path, 'w') as f:
+                json.dump(self.__users, f, indent=4)
+
+            logger.info(
+                f"User data saved to {self._users_path}"
+            )
+
+        except Exception:
+            logger.exception(
+                "Failed to save user data"
+            )
