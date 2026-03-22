@@ -1,4 +1,4 @@
-from ..models import Order
+from models import Order
 
 class OrderService:
 
