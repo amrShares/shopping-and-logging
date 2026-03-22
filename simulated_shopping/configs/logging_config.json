@@ -1,0 +1,42 @@
+{
+  "version" : 1,
+  "disable_existing_loggers": false,
+    "formatters": {
+        "standard": {
+            "format": "%(asctime)s - %(levelname)s - %(message)s"
+        },
+        "custom" : {
+          "()" : "..utils.UTCFormatter"
+        }
+    },
+    "handlers": {
+        "console": {
+            "class": "logging.StreamHandler",
+            "level": "DEBUG",
+            "formatter": "standard",
+            "stream": "ext://sys.stdout"
+        },
+        "file": {
+            "class": "logging.handlers.RotatingFileHandler",
+            "level": "DEBUG",
+            "formatter": "custom",
+            "filename": "app.log",
+            "mode": "a",
+            "maxBytes" : 1024,
+            "backupCount" : 3
+        }
+    },
+    "loggers": {
+        "root": {
+            "handlers": ["console", "file"],
+            "level": "DEBUG",
+            "propagate": false
+        },
+        "services.cart_service": {
+            "level" : "WARNING"
+      },
+        "models.inventory": {
+            "level" : "INFO"
+        }
+    }
+}
