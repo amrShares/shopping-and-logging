@@ -4,6 +4,11 @@ import json
 import services
 import models
 import random
+import time
+
+from simulated_shopping.models import Order
+from simulated_shopping.services import OrderService
+
 
 def configure_loggers():
     # load json configuration file
@@ -16,14 +21,38 @@ def load_services():
     inventory_service = services.InventoryService(inventory)
 
     user_service = services.UserService("./data/users.json")
-    return inventory, inventory_service, user_service
+    order_service = OrderService(inventory_service)
+    return inventory, inventory_service, user_service, order_service
 
 
 def main():
-    invnetory, inventory_service, user_service = load_services()
+    inventory, inventory_service, user_service, order_service = load_services()
 
-    while True:
-        user = user_service.get_user(random.randint(0, len(user_service.total_user_no)))
-        inventory_service.stock[]
+    for i in range(100):
+        user_id = random.randint(1, user_service.total_user_no)
+        user, cart = user_service.get_user(user_id)
+        products_to_buy = [random.randint(1, inventory.no_of_products), random.randint(1, inventory.no_of_products), random.randint(1, inventory.no_of_products)]
+        print(user)
+
+        print(f'will aim to buy the products:')
+        for i in range(3):
+            print(inventory.get_product_details(products_to_buy[i]))
+
+        for product_id in products_to_buy:
+            cart.add_item(product_id, random.randint(1, 3))
+
+        user_order, total_price = order_service.create_order(user_id, user.available_balance(), cart, inventory)
+        if not isinstance(user_order, models.Order):
+            if total_price == 0:
+                print('purchase was cancelled as one of the stock does not contain enough units of one of the products')
+            else:
+                print(f'the purchase (total price={total_price}) is greater than the available user balance')
+        else:
+            user_service.reduce_balance(user_id, total_price)
+            print(f'the purchase(total price={total_price}) was completed')
+
+        time.sleep(1)
+
+
 if __name__ == "__main__":
     main()

@@ -5,39 +5,41 @@ class OrderService:
     def __init__(self, inventory_service):
 
         self.inventory_service = inventory_service
-        self.order_counter = 1
+        self.order_counter = 0
 
-    def create_order(self, user_id, cart, product_lookup):
+    def create_order(self, user_id, available_balance, cart, product_lookup):
 
         total_price = 0
         items_added  = 0
         for product_id, quantity in cart.items.items():
 
-            product = product_lookup[product_id]
+            product = product_lookup.get_product_details(product_id)
 
             if self.inventory_service.reduce_stock(
                 product_id,
                 quantity
             ):
-                total_price += product.price * quantity
+                total_price += product['price'] * quantity
                 items_added += 1
             else:
-                self.revert_order(user_id, cart, product_lookup, items_added)
-                return False
+                self.revert_order(cart, items_added)
+                return False, 0
+
+        if available_balance < total_price:
+            self.revert_order(cart, items_added)
+            return False, total_price
 
         order = Order(
             order_id=self.order_counter,
             user_id=user_id,
-            items=dict(cart.items),
-            total_price=total_price
+            cart=cart
         )
 
         self.order_counter += 1
 
-        return order
+        return order, total_price
 
-    def revert_order(self, user_id, cart, product_lookup, items_added):
-
+    def revert_order(self, cart, items_added):
 
         for product_id, quantity in cart.items.items():
 

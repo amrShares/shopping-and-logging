@@ -24,7 +24,7 @@ class UserService:
         return self.__users.get(str(user_id), False)
 
     def get_user(self, user_id):
-        return User(self.get_user_data(user_id)), Cart()
+        return User(**self.get_user_data(user_id)), Cart()
 
     def view_user_data(self, user_id):
         user_data = self.__users.get(str(user_id))
@@ -55,3 +55,7 @@ class UserService:
             logger.exception(
                 "Failed to save user data"
             )
+
+    def reduce_balance(self, user_id, amount):
+        self.__users[str(user_id)]['balance'] -= amount
+        self.save_user_data()

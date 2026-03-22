@@ -3,60 +3,60 @@
         "name": "Amr Hassan",
         "email": "amr.hassan@example.com",
         "orders": [],
-        "balance": 1500.0
+        "balance": 470.05999999999995
     },
     "2": {
         "name": "Sara Ahmed",
         "email": "sara.ahmed@example.com",
         "orders": [],
-        "balance": 820.5
+        "balance": 1480.1099999999997
     },
     "3": {
         "name": "Mohamed Ali",
         "email": "mohamed.ali@example.com",
         "orders": [],
-        "balance": 430.75
+        "balance": 530.1599999999999
     },
     "4": {
         "name": "Nour Khaled",
         "email": "nour.khaled@example.com",
         "orders": [],
-        "balance": 2100.0
+        "balance": 290.07000000000005
     },
     "5": {
         "name": "Ahmed Mostafa",
         "email": "ahmed.mostafa@example.com",
         "orders": [],
-        "balance": 95.25
+        "balance": 150.37999999999988
     },
     "6": {
         "name": "Laila Mahmoud",
         "email": "laila.mahmoud@example.com",
         "orders": [],
-        "balance": 560.4
+        "balance": 80.12999999999988
     },
     "7": {
         "name": "Karim Adel",
         "email": "karim.adel@example.com",
         "orders": [],
-        "balance": 1340.0
+        "balance": 830.19
     },
     "8": {
         "name": "Rana Samir",
         "email": "rana.samir@example.com",
         "orders": [],
-        "balance": 299.99
+        "balance": 60.09999999999968
     },
     "9": {
         "name": "Youssef Nabil",
         "email": "youssef.nabil@example.com",
         "orders": [],
-        "balance": 760.6
+        "balance": 190.04999999999995
     },
     "10": {
         "name": "Mariam Tarek",
         "email": "mariam.tarek@example.com",
         "orders": [],
-        "balance": 50.0
+        "balance": 500.0
     }
 }

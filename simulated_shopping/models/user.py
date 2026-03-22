@@ -11,6 +11,12 @@ class User:
     def update_email(self, new_email):
         self.email = new_email
 
+    def available_balance(self):
+        return self.balance
+
+    def no_orders(self):
+        return len(self.orders)
+
     def update_balance(self, new_balance):
         if new_balance < 0:
             raise ValueError("Balance cannot be negative.")

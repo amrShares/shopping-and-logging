@@ -34,6 +34,13 @@ class Inventory:
     def set_stock(self, product_id, quantity):
         self._stock[product_id] = quantity
 
-    @property
-    def stock(self, product_id):
+    def get_product_details(self, product_id):
+        return self._product_details.get(str(product_id), False)
+
+    def get_stock(self, product_id):
         return self._stock.get(product_id, 0)
+
+    @property
+    def no_of_products(self):
+        return len(self._product_details)
+    
