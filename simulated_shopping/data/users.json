@@ -1,0 +1,64 @@
+{
+  "users": [
+    {
+      "name": "Amr Hassan",
+      "email": "amr.hassan@example.com",
+      "orders": [],
+      "balance": 1500.00
+    },
+    {
+      "name": "Sara Ahmed",
+      "email": "sara.ahmed@example.com",
+      "orders": [],
+      "balance": 820.50
+    },
+    {
+      "name": "Mohamed Ali",
+      "email": "mohamed.ali@example.com",
+      "orders": [],
+      "balance": 430.75
+    },
+    {
+      "name": "Nour Khaled",
+      "email": "nour.khaled@example.com",
+      "orders": [],
+      "balance": 2100.00
+    },
+    {
+      "name": "Ahmed Mostafa",
+      "email": "ahmed.mostafa@example.com",
+      "orders": [],
+      "balance": 95.25
+    },
+    {
+      "name": "Laila Mahmoud",
+      "email": "laila.mahmoud@example.com",
+      "orders": [],
+      "balance": 560.40
+    },
+    {
+      "name": "Karim Adel",
+      "email": "karim.adel@example.com",
+      "orders": [],
+      "balance": 1340.00
+    },
+    {
+      "name": "Rana Samir",
+      "email": "rana.samir@example.com",
+      "orders": [],
+      "balance": 299.99
+    },
+    {
+      "name": "Youssef Nabil",
+      "email": "youssef.nabil@example.com",
+      "orders": [],
+      "balance": 760.60
+    },
+    {
+      "name": "Mariam Tarek",
+      "email": "mariam.tarek@example.com",
+      "orders": [],
+      "balance": 50.00
+    }
+  ]
+}
