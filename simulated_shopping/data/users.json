@@ -9,7 +9,7 @@
         "name": "Sara Ahmed",
         "email": "sara.ahmed@example.com",
         "orders": [],
-        "balance": 1480.1099999999997
+        "balance": 50.23999999999967
     },
     "3": {
         "name": "Mohamed Ali",
@@ -39,7 +39,7 @@
         "name": "Karim Adel",
         "email": "karim.adel@example.com",
         "orders": [],
-        "balance": 830.19
+        "balance": 290.24
     },
     "8": {
         "name": "Rana Samir",

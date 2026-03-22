@@ -1,7 +1,8 @@
 import logging
 import time
 import json
-
+import random
+from models import User
 
 class UTCFormatter(logging.Formatter):
     """
@@ -48,3 +49,14 @@ class UTCFormatter(logging.Formatter):
             )
 
         return json.dumps(log_entry)
+
+
+def spawn_user():
+    user_names = ['ahmed', 'mohamed', 'jack', 'jones', 'jan', 'david', 'myers', 'doe', 'salma', 'salama', 'mike', 'ming', 'ding']
+    first_name, last_name = user_names[random.randint(0, len(user_names))], user_names[random.randint(0, len(user_names))]
+    user_name = first_name + ' ' + last_name
+    email = first_name + '.' + last_name + '@example.org'
+    orders = []
+    balance = 3000 * (0.25 + random.random()*0.75)
+
+    return User(user_name, email, orders, balance)

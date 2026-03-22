@@ -5,6 +5,7 @@ import services
 import models
 import random
 import time
+import utils
 
 from simulated_shopping.models import Order
 from simulated_shopping.services import OrderService
@@ -29,6 +30,13 @@ def main():
     inventory, inventory_service, user_service, order_service = load_services()
 
     for i in range(100):
+        create_user = random.random() > 0.95
+        if create_user:
+            new_user = utils.spawn_user()
+            user_service.add_user(new_user)
+            print('creating a new user with the details')
+            print(new_user)
+
         user_id = random.randint(1, user_service.total_user_no)
         user, cart = user_service.get_user(user_id)
         products_to_buy = [random.randint(1, inventory.no_of_products), random.randint(1, inventory.no_of_products), random.randint(1, inventory.no_of_products)]
