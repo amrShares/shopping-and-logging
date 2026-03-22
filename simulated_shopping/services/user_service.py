@@ -1,6 +1,7 @@
 import logging
 import json
 from models import User
+from models import Cart
 
 logger = logging.getLogger(__name__)
 
@@ -8,6 +9,7 @@ class UserService:
     def __init__(self, users_path):
         self._users_path = users_path
         self.load_user_data()
+        self.total_user_no = len(self.__users)
 
     def load_user_data(self):
         try:
@@ -20,6 +22,9 @@ class UserService:
 
     def get_user_data(self, user_id):
         return self.__users.get(str(user_id), False)
+
+    def get_user(self, user_id):
+        return User(self.get_user_data(user_id)), Cart()
 
     def view_user_data(self, user_id):
         user_data = self.__users.get(str(user_id))

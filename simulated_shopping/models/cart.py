@@ -1,5 +1,4 @@
 class Cart:
-
     def __init__(self):
         self.items = {}  # product_id → quantity
 
